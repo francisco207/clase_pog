@@ -35,6 +35,7 @@ while True:
         print("El numero de productos es:", numero_productos)
         for producto in lista_productos:
             producto.producto()
+            print("-" * 20)
     
     elif opcion == 3:
         print("ingrese el nombre del producto a pedir")
@@ -46,6 +47,8 @@ while True:
                 if cantidad_pedir <= producto.cantidad:
                     producto.cantidad -= cantidad_pedir
                     print("Pedido realizado correctamente")
+                    print("Precio total:", producto.precio * cantidad_pedir)
+                    print("Cantidad disponible:", producto.cantidad)
                 else:
                     print("No hay suficiente cantidad disponible")
                 break
