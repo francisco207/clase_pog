@@ -42,7 +42,7 @@ while True:
         numero_de_cuenta = input("Ingrese el número de cuenta para realizar la transacción: ")
         for cuenta in lista_cuentas:
             if cuenta.numero_de_cuenta == numero_de_cuenta:
-                transaccion = input("Ingrese 'd' para depósito o 'r' para retiro: ").lower()
+                transaccion = input("Ingrese 'd' para depósito, 'r' para retiro o 'c' para consultar saldo: ").lower()
                 if transaccion == 'd':
                     monto = float(input("Ingrese el monto a depositar: "))
                     cuenta.saldo += monto
@@ -54,6 +54,8 @@ while True:
                     else:
                         cuenta.saldo -= monto
                         print(f"Retiro exitoso. Nuevo saldo: {cuenta.saldo}")
+                elif transaccion == 'c':
+                    print(f"Saldo actual: {cuenta.saldo}")
                 else:
                     print("Transacción no válida.")
                 break
